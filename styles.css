@@ -68,7 +68,7 @@ body {
 }
 
 .card-body > .text-wrapper {
-    height: 15em;
+    height: 13em;
 }
 
 svg {
@@ -80,6 +80,7 @@ svg {
     padding: 2em;
 }
 .btn {
+    -webkit-appearance: none;
     border: none;
     background-color: #476070;
 }
@@ -222,7 +223,7 @@ h1 {
 
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (min-width: 577px) and (max-width: 768px) {
     .card-body > .text-wrapper {
         height: 9em;
     }
