@@ -2,6 +2,14 @@
     box-sizing: border-box;
     margin: 0px;
     padding: 0px;
+    font-family: 'Arvo', serif;
+}
+html, body {
+    height: 100%;
+}
+body {
+    display: flex;
+    flex-direction: column;
 }
 
 .navbar {
@@ -11,7 +19,11 @@
 .title {
     /* background-image: url("images/spoons.jpg");
     background-size: cover; */
+    margin: auto;
+    display: flex;
+    justify-content: center;
     width: 100%;
+    max-width: 1600px;
     position: relative;
     text-align: center;
     color: white;
@@ -21,22 +33,52 @@
     width: 100%;
     max-height: 800px;
     object-fit: cover;
-    object-position: top;
-    margin-bottom: 2em;
+    object-position: center;
+}
+
+.title-short {
+    max-height: 300px;
+}
+
+.title-text-tall {
+    top: 13%;
 }
 
 .title-header {
     position: absolute;
-    top: 13%;
     width: 100%;
-    font-size: 10vw;
+    font-size: 8vw;
+}
 
+.title-text-short {
+    font-size: 12vw;
+    align-self: center;
+    margin: 0 auto;
+}
+
+#cta-button {
+    position: absolute;
+    top: 60%;
+    margin: 1px auto;
+}
+
+.card-img-top {
+    height: 15em;
+    object-fit: cover;
+}
+
+.card-body > .text-wrapper {
+    height: 15em;
 }
 
 svg {
     margin-bottom: 3px;
 }
 
+.container {
+    background-color: #e2e7f5;
+    padding: 2em;
+}
 .btn {
     border: none;
     background-color: #476070;
@@ -53,21 +95,155 @@ svg {
     background-color: #476070;
 }
 
+.disabled {
+    background-color: #476070;
+    color: rgb(235, 233, 233);
+}
+
 .card-title {
     font-size: 1.7em;
 }
 
+#WhatWeDo {
+    margin: 0px auto;
+}
+
+#WhatWeDoTitle {
+    margin-top: 1.5rem;
+}
+
+.content {
+    flex: 1 0 auto;
+}
+
 .footer-container {
+    flex-shrink: 0;
     display: flex;
     background-color: #1d3645;
     color: white;
     justify-content: space-around;
     padding: 0.5em;
+    align-items: center;
 }
+
 
 .footer-text {
     margin-bottom: 0px !important;
-    font-size: 1.2em;
+    font-size: 1em;
+}
+
+h1 {
+    text-align: center;
+}
+
+.recipe-container {
+    margin: 1em;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.recipe-img {
+    max-width: 100%;
 }
 
 
+.recipe-title > h1 {
+    font-size: 2em;
+    margin: 1rem;
+}
+
+.recipe-subtitle {
+    color: gray;
+    display: flex;
+    justify-content: space-around;
+    margin: 0 auto;
+}
+
+.recipe-body {
+    margin: 2em;
+}
+
+.recipe-page {
+    background-color: #e2e7f5;
+    height: 98%;
+}
+
+.recipe-container {
+    background-color: white;
+    height: 100%;
+}
+
+@media only screen and (min-width: 576px) {
+    .recipe-header {
+        display: flex;
+        width: 100%;
+
+        flex-direction: row-reverse;
+    }
+    .recipe-container {
+        padding-top: 2em;
+    }
+    .title-container {
+        flex-grow: 2;
+        flex-direction: column;
+        display: flex;
+        justify-content: center;
+        max-width: 67%;
+    }
+    .recipe-img {
+        max-width: 33%;
+        margin-right: 2em;
+        object-fit: cover;
+    }
+    .recipe-title {
+        font-size: 4vw;
+    }
+    .recipe-subtitle {
+        max-width: 100%;
+        width: 35vw;
+    }
+
+
+}
+
+@media only screen and (min-width: 768px) {
+    .recipe-body {
+        display: flex;
+    }
+    .recipe-ingredients {
+        padding-right: 10px;
+        min-width: 15em;
+    }
+    .recipe-instructions {
+        border-left: 1px solid #c8c9ca;
+        padding-left: 10px;
+    }
+    
+
+}
+
+@media only screen and (max-width: 768px) {
+    .card-body > .text-wrapper {
+        height: 9em;
+    }
+}
+
+@media only screen and (min-width: 1400px) {
+    .title-header {
+        font-size: 129px;
+    }
+    .container {
+        max-width: 1600px;
+    }
+    .recipe-title > h1 {
+        font-size: 88px;
+    }
+
+}
+
+@media only screen and (min-width: 1600px) {
+    .container {
+        max-width: 1600px;
+    }
+
+}

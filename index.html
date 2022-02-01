@@ -8,6 +8,10 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arvo:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <title>Creative Project</title>
 
@@ -17,7 +21,7 @@
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#"><span class="material-icons md-36">
+            <a class="navbar-brand" href="index.html"><span class="material-icons md-36">
                     dinner_dining
                 </span></a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -30,10 +34,7 @@
                         <a class="nav-link active" aria-current="page" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Recipe Book</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link disabled" href="#">About</a>
+                        <a class="nav-link" href="pages/recipe-book.html">Recipe Book</a>
                     </li>
                 </ul>
             </div>
@@ -42,7 +43,14 @@
 
     <div class='title'>
         <img class='title-img' src='images/spoons.jpg' />
-        <h1 class='title-header display-1'>Cooking Companion</h1>
+        <h1 class='title-header title-text-tall display-1'>Cooking Companion</h1>
+        <a id="cta-button" type="button" href="pages/recipe-book.html" class="btn btn-primary">Get Started <svg
+                xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right"
+                viewBox="0 0 16 16">
+                <path fill-rule="evenodd"
+                    d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
+            </svg></a>
+
     </div>
     <div class="container">
         <div class="row">
@@ -52,9 +60,8 @@
                     <img src="images/grilled-cheese.jpg" class="card-img-top" alt="Grilled cheese">
                     <div class="card-body">
                         <h5 class="card-title">Grilled Cheese Sandwich</h5>
-                        <p class="card-text">cheesy Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illo
-                            cumque rem
-                            incidunt, mollitia nostrum harum facilis.</p>
+                        <p class="card-text">Recreate the flavors of your childhood in less than 15 minutes with
+                            this simple and delicious recipe. Try it with our Tomato Basil Soup!</p>
                         <a type="button" href="pages/recipe1.html" class="btn btn-primary">Recipe <svg
                                 xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                 class="bi bi-arrow-right" viewBox="0 0 16 16">
@@ -69,10 +76,9 @@
                     <img src="images/tomato-soup.jpg" class="card-img-top" alt="Grilled cheese">
                     <div class="card-body">
                         <h5 class="card-title">Creamy Tomato Basil Soup</h5>
-                        <p class="card-text">soupy Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat,
-                            provident.
-                            Molestiae ipsam, accusamus sint solut.</p>
-                        <a type="button" href="pages/recipe1.html" class="btn btn-primary">Recipe <svg
+                        <p class="card-text">This tomato soup is going to be the best one you've ever had. The
+                            trick to it is the <em>salt</em>. You ever heard of salt?</p>
+                        <a type="button" href="pages/recipe2.html" class="btn btn-primary">Recipe <svg
                                 xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                 class="bi bi-arrow-right" viewBox="0 0 16 16">
                                 <path fill-rule="evenodd"
@@ -81,8 +87,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col-12">
-                <h1 class="display-5">What We Do</h1>
+            <div id="WhatWeDo" class="col-md-8">
+                <h1 id="WhatWeDoTitle" class="display-5">What We Do</h1>
                 <div class="card mb-5">
                     <div class="card-body">
                         <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni pariatur ad
@@ -96,7 +102,7 @@
         </div>
     </div>
 
-    <div class="footer-container">
+    <div class="footer-container navbar-fixed-bottom">
         <p class="footer-text">Jared Black</p>
         <a class="footer-text" href='https://github.com/jaredblack/260-creative-project.git'>Github</a>
         <p class="footer-text">Benjamin Foutz</p>
