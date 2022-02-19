@@ -1,0 +1,6 @@
+Recipe page formatting
+Back button
+Responsiveness
+
+Title header size
+Force images to be square
