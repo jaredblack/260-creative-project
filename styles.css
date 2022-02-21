@@ -19,7 +19,7 @@ body {
 .title {
     /* background-image: url("images/spoons.jpg");
     background-size: cover; */
-    margin: auto;
+    margin: 0px auto;
     display: flex;
     justify-content: center;
     width: 100%;
@@ -37,7 +37,7 @@ body {
 }
 
 .title-short {
-    max-height: 128px;
+    max-height: 160px;
 }
 
 .title-text-tall {
@@ -54,6 +54,17 @@ body {
     font-size: 12vw;
     align-self: center;
     margin: 0 auto;
+}
+
+.home-content {
+    max-width: 1200px;
+    background-color: #e2e7f5;
+    margin: auto;
+}
+
+#WhatWeDoText {
+    max-width: 654px;
+    margin: auto;
 }
 
 #cta-button {
@@ -82,8 +93,9 @@ body {
 }
 
 .card-img-top {
-    width: 100%;
-    height: auto;
+    position: absolute;
+    height: 100%;
+    object-fit: cover;
 }
 
 .card-body > .text-wrapper {
@@ -160,10 +172,6 @@ svg {
     margin: 0px auto;
 }
 
-#WhatWeDoTitle {
-    margin-top: 1.5rem;
-}
-
 .content {
     flex: 1 0 auto;
 }
@@ -194,10 +202,15 @@ h1 {
     margin: auto;
 }
 
-.recipe-img {
+.recipe-vid {
     max-width: 100%;
 }
 
+.square-img {
+    padding-bottom: 100%;
+    overflow: hidden; 
+    position: relative;
+}
 
 .recipe-title > h1 {
     font-size: 2em;
@@ -208,11 +221,17 @@ h1 {
     color: gray;
     display: flex;
     justify-content: space-around;
+    align-items: center;
     margin: 0 auto;
+    font-size: 1.2em;
 }
 
 .recipe-body {
     margin: 2em;
+}
+
+#instructions-list > li {
+    margin-bottom: .5em;
 }
 
 .recipe-page {
@@ -223,6 +242,11 @@ h1 {
 .recipe-container {
     background-color: white;
     height: 100%;
+}
+
+.recipe-ingredients {
+    border-bottom: 1px solid #c8c9ca;
+    margin-bottom: 1em;
 }
 
 .search-form {
@@ -250,6 +274,36 @@ h1 {
     flex-wrap: wrap;
     padding: 1em 0 1em 0;
     background-color: #f1cece;
+}
+
+.recipe-tags {
+    /* display: flex; */
+    /* flex-wrap: wrap; */
+    margin: auto;
+    /* justify-content: space-evenly; */
+
+    gap: 1em;
+}
+
+.tag-content > ul {
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.tag-content > ul > li {
+    margin: .5em;
+    border: 1px solid gray;
+    border-radius: 50px;
+    padding: .2em .5em .2em .5em;
+    background-color: white;
+
+}
+
+.tag-content > ul > li:hover, .tag-content > ul > li:active {
+    background-color: #a8b2ce;
+    cursor: pointer;
 }
 
 .loading-container {
@@ -311,17 +365,18 @@ h1 {
         justify-content: center;
         max-width: 67%;
     }
-    .recipe-img {
+    .recipe-vid {
         max-width: 33%;
         margin-right: 2em;
         object-fit: cover;
     }
     .recipe-title {
-        font-size: 4vw;
+        font-size: 3vw;
     }
     .recipe-subtitle {
         max-width: 100%;
-        width: 35vw;
+        width: 60vw;
+        max-width: 500px;
     }
 
 
@@ -333,14 +388,23 @@ h1 {
         display: flex;
     }
     .recipe-ingredients {
-        padding-right: 10px;
+        border-bottom: none;
+        margin-bottom: 0;
+        padding-right: 20px;
         min-width: 15em;
     }
     .recipe-instructions {
         border-left: 1px solid #c8c9ca;
-        padding-left: 10px;
+        padding-left: 20px;
     }
     
+    .title-header {
+        font-size: 7vw;
+    }
+
+    .recipe-title {
+        font-size: 2.5vw;
+    }
 
 }
 
@@ -350,15 +414,25 @@ h1 {
     }
 }
 
+@media only screen and (min-width: 1200px) {
+    .recipe-title > h1 {
+        font-size: 64px;
+    }
+    .recipe-ingredients {
+        min-width: 20em;
+    }
+}
+
 @media only screen and (min-width: 1400px) {
     .title-header {
-        font-size: 129px;
+        font-size: 100px;
     }
     .container {
         max-width: 1600px;
     }
-    .recipe-title > h1 {
-        font-size: 88px;
+
+    .recipe-subtitle {
+        width: 35vw;
     }
 
 }

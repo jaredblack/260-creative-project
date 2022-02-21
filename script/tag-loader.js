@@ -417,11 +417,11 @@ let tags = [
     }
 ]
 
-let cuisineTags = tags.filter(x => x.type === "cuisine");
-let dietaryTags = tags.filter(x => x.type === "dietary");
-let difficultyTags = tags.filter(x => x.type === "difficulty");
-let mealTags = tags.filter(x => x.type === "meal");
-let methodTags = tags.filter(x => x.type === "method");
+let cuisineTags = tags.filter(x => x.type === "cuisine").sort((x, y) => x.display_name.localeCompare(y.display_name));
+let dietaryTags = tags.filter(x => x.type === "dietary").sort((x, y) => x.display_name.localeCompare(y.display_name));
+let difficultyTags = tags.filter(x => x.type === "difficulty").sort((x, y) => x.display_name.localeCompare(y.display_name));
+let mealTags = tags.filter(x => x.type === "meal").sort((x, y) => x.display_name.localeCompare(y.display_name));
+let methodTags = tags.filter(x => x.type === "method").sort((x, y) => x.display_name.localeCompare(y.display_name));
 
 const cuisineDiv = document.getElementById("cuisineDiv");
 const dietaryDiv = document.getElementById("dietaryDiv");

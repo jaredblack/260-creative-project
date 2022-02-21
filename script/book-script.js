@@ -1,3 +1,4 @@
+let recipeList = "";
 let storedTag = sessionStorage.getItem("tag");
 if (storedTag !== "noTag") {
     recipeLoader(storedTag);
@@ -35,7 +36,7 @@ function recipeLoader(queryString, tagName, random) {
         offset = Math.floor(Math.random() * 8907);
         console.log(offset)
     }
-    apiURL += `?from=${offset}&size=50`;
+    apiURL += `?from=${offset}&size=30`;
 
     if (tagName) {
         apiURL += `&tags=${tagName}`;
@@ -64,7 +65,7 @@ function recipeLoader(queryString, tagName, random) {
 }
 
 function fillGrid(json) {
-    let recipeList = json.results.filter(recipe => recipe.canonical_id.includes("recipe") && recipe.aspect_ratio === "1:1");
+    recipeList = json.results.filter(recipe => recipe.canonical_id.includes("recipe"));
 
     let htmlString = "";
 
@@ -85,8 +86,10 @@ function fillGrid(json) {
         htmlString +=
             `<div class="col-md-6 col-lg-4 col-xl-3">
                     <div class="card recipe-card mb-4">
-                        <img class="card-img-top"
-                            src="${recipeList[i].thumbnail_url}" />
+                        <div class="square-img">
+                            <img class="card-img-top"
+                                src="${recipeList[i].thumbnail_url}" />
+                        </div>
                         <div class="card-body recipe-card-body">
                             <div class="text-wrapper">
                                 <h5 class="card-title">${recipeList[i].name}</h5>
@@ -94,18 +97,24 @@ function fillGrid(json) {
 
                             <div class="rating-button">
                                 <p>${Math.round(recipeList[i].user_ratings.score * 100)}% <span class="material-icons thumb-up">thumb_up</span></p>
-                                <a type="button" href="/pages/recipe1.html" class="btn btn-primary recipe-button">Recipe
+                                <button type="button" class="btn btn-primary recipe-button" onclick="loadRecipe(${i})">Recipe
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
                                         class="bi bi-arrow-right" viewBox="0 0 16 16">
                                         <path fill-rule="evenodd"
                                             d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8z" />
-                                    </svg></a>
+                                    </svg></button>
                             </div>
                         </div>
                     </div>
                 </div>`;
     }
     document.getElementById("recipe-row").innerHTML = htmlString;
+}
+
+function loadRecipe(i) {
+    console.log(`before: ${recipeList[i].name}`);
+    sessionStorage.setItem("recipe", JSON.stringify(recipeList[i]));
+    window.location.href = "/pages/recipe1.html";
 }
 
 
